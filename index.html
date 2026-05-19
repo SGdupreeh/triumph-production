@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Triumph Production — AI-видеопродакшн и VFX нового поколения.">
+    <title>Triumph Production</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-v17.css">
+</head>
+<body>
+<div class="site-wrapper" style="position: relative;">
+
+    <!-- Текстовый водяной знак (Пасхалка) — слева, 6 элементов, повышенная яркость -->
+    <div class="side-watermark" aria-hidden="true">
+        <div class="watermark-item">
+            <span>my obsession will destroy them</span>
+            <svg width="16" height="64" viewBox="0 0 16 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="8" y2="46" />
+                <line x1="3" y1="46" x2="13" y2="46" />
+                <line x1="8" y1="46" x2="8" y2="56" />
+                <circle cx="8" cy="57" r="1" fill="currentColor" />
+            </svg>
+        </div>
+        <div class="watermark-item">
+            <span>my obsession will destroy them</span>
+            <svg width="16" height="64" viewBox="0 0 16 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="8" y2="46" />
+                <line x1="3" y1="46" x2="13" y2="46" />
+                <line x1="8" y1="46" x2="8" y2="56" />
+                <circle cx="8" cy="57" r="1" fill="currentColor" />
+            </svg>
+        </div>
+        <div class="watermark-item">
+            <span>my obsession will destroy them</span>
+            <svg width="16" height="64" viewBox="0 0 16 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="8" y2="46" />
+                <line x1="3" y1="46" x2="13" y2="46" />
+                <line x1="8" y1="46" x2="8" y2="56" />
+                <circle cx="8" cy="57" r="1" fill="currentColor" />
+            </svg>
+        </div>
+        <div class="watermark-item">
+            <span>my obsession will destroy them</span>
+            <svg width="16" height="64" viewBox="0 0 16 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="8" y2="46" />
+                <line x1="3" y1="46" x2="13" y2="46" />
+                <line x1="8" y1="46" x2="8" y2="56" />
+                <circle cx="8" cy="57" r="1" fill="currentColor" />
+            </svg>
+        </div>
+        <div class="watermark-item">
+            <span>my obsession will destroy them</span>
+            <svg width="16" height="64" viewBox="0 0 16 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="8" y2="46" />
+                <line x1="3" y1="46" x2="13" y2="46" />
+                <line x1="8" y1="46" x2="8" y2="56" />
+                <circle cx="8" cy="57" r="1" fill="currentColor" />
+            </svg>
+        </div>
+        <div class="watermark-item">
+            <span>my obsession will destroy them</span>
+            <svg width="16" height="64" viewBox="0 0 16 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="8" y2="46" />
+                <line x1="3" y1="46" x2="13" y2="46" />
+                <line x1="8" y1="46" x2="8" y2="56" />
+                <circle cx="8" cy="57" r="1" fill="currentColor" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="grain" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <div class="cursor" id="cursor"></div>
+
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 20H85V35H57V85H43V35H15V20Z" fill="#FFFFFF"/>
+                </svg>
+                <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1;">
+                    <span style="font-size: 16px; font-weight: 800; letter-spacing: 0.15em; color: #FFFFFF; text-transform: uppercase;">Triumph</span>
+                    <span style="font-size: 8px; font-weight: 400; letter-spacing: 0.38em; color: #888888; text-transform: uppercase; margin-top: 3px;">Production</span>
+                </div>
+            </a>
+            <div class="nav__links">
+                <a href="#work" data-i18n="nav.work">Проекты</a>
+                <a href="#features" data-i18n="nav.feat">Услуги</a>
+                <a href="#faq" data-i18n="nav.faq">FAQ</a>
+                <a href="#contact" data-i18n="nav.contact">Контакт</a>
+                <button class="nav__lang" id="langToggle">EN</button>
+                <a href="https://t.me/fatalTriumph" target="_blank" class="nav__btn" data-i18n="nav.cta">Обсудить проект →</a>
+            </div>
+            <button class="nav__mob" id="burger"><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="mob" id="mob">
+        <a href="#work" data-i18n="nav.work">Проекты</a>
+        <a href="#features" data-i18n="nav.feat">Услуги</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" data-i18n="nav.contact">Контакт</a>
+        <a href="https://t.me/fatalTriumph" target="_blank" class="mob__cta" data-i18n="nav.cta">Обсудить проект →</a>
+    </div>
+
+    <section class="hero">
+        <div id="webgl-hero" style="position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.85;"></div>
+        <div class="hero__glow"></div>
+        <div class="hero__content" style="position: relative; z-index: 5;">
+            <!-- Меч убран по просьбе пользователя -->
+            <span class="hero__big" data-a data-parallax="0.15">TRIUMPH</span>
+            <h1 class="hero__h" data-a data-i18n="hero.h">
+                AI-видеопродакшн нового поколения
+            </h1>
+            <p class="hero__p" data-a data-i18n="hero.p">
+                Визуальный контент, который выводит бренды<br class="desk">за рамки привычного и генерирует поток клиентов.<br class="desk">VFX, AI, Motion Design.
+            </p>
+            <div class="hero__btns" data-a>
+                <a href="#work" class="btn btn--main magnetic" data-i18n="btn.work">Смотреть работы ↓</a>
+                <a href="https://t.me/fatalTriumph" target="_blank" class="btn btn--sec magnetic" data-i18n="btn.tg">Написать в Telegram</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="wrap">
+            <!-- Интегрированы рендер-метрики и прогресс-бары Obsession Metrics -->
+            <div class="stats__grid" data-a>
+                <div class="stats__item">
+                    <span class="stats__num">120K+</span>
+                    <div class="stats__track"><div class="stats__bar"></div></div>
+                    <div class="stats__status">COMPILING DATA...</div>
+                    <span class="stats__label" data-i18n="stats.views">Просмотров</span>
+                </div>
+                <div class="stats__sep"></div>
+                <div class="stats__item">
+                    <span class="stats__num">15+</span>
+                    <div class="stats__track"><div class="stats__bar"></div></div>
+                    <div class="stats__status">PROCESSING CORES...</div>
+                    <span class="stats__label" data-i18n="stats.projects">Проектов</span>
+                </div>
+                <div class="stats__sep"></div>
+                <div class="stats__item">
+                    <span class="stats__num">7</span>
+                    <div class="stats__track"><div class="stats__bar"></div></div>
+                    <div class="stats__status">CALCULATING SPEED...</div>
+                    <span class="stats__label" data-i18n="stats.days">Дней в среднем</span>
+                </div>
+                <div class="stats__sep"></div>
+                <div class="stats__item">
+                    <span class="stats__num">100%</span>
+                    <div class="stats__track"><div class="stats__bar"></div></div>
+                    <div class="stats__status">RENDERING VICTORY...</div>
+                    <span class="stats__label" data-i18n="stats.result">Результат</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="work" id="work">
+        <div class="wrap wrap--lg sticky-layout">
+            <div class="sticky-sidebar">
+                <div class="section-top" data-a>
+                    <p class="section-label" data-i18n="work.label">Проекты</p>
+                    <h2 class="section-h" data-a data-i18n="work.h">Созданы для результата</h2>
+                    <p class="section-p" data-i18n="work.p">Каждый проект — это решение бизнес-задачи через визуальный сторителлинг.</p>
+                </div>
+            </div>
+            <div class="sticky-content">
+                <div class="grid-916">
+                    <article class="vcard tilt-card" data-a>
+                        <div class="vcard__vid"><div class="vid-overlay"></div><video autoplay loop muted playsinline preload="metadata"><source src="videos/forest_2.mp4" type="video/mp4"></video></div>
+                        <div class="vcard__over">
+                            <span class="proj__badge" data-i18n="proj.b1">B2B & Промышленность</span>
+                            <h3 class="vcard__h" data-i18n="proj.t1">Имиджевое продвижение завода</h3>
+                            <div class="proj__meta"><span data-i18n="proj.v1">120K+ просмотров</span><span data-i18n="proj.d1">14 дней</span></div>
+                        </div>
+                    </article>
+                    <article class="vcard tilt-card" data-a>
+                        <div class="vcard__vid"><div class="vid-overlay"></div><video autoplay loop muted playsinline preload="metadata"><source src="videos/Comp 1.mp4" type="video/mp4"></video></div>
+                        <div class="vcard__over">
+                            <span class="proj__badge" data-i18n="proj.b2">AI-генерация & VFX</span>
+                            <h3 class="vcard__h" data-i18n="proj.t2">Креативная AI-композиция</h3>
+                            <div class="proj__meta"><span data-i18n="proj.v2">85K+ просмотров</span><span data-i18n="proj.d2">7 дней</span></div>
+                        </div>
+                    </article>
+                    <article class="vcard tilt-card" data-a>
+                        <div class="vcard__vid"><div class="vid-overlay"></div><video autoplay loop muted playsinline preload="metadata"><source src="videos/VIDEORODICK_3.mp4" type="video/mp4"></video></div>
+                        <div class="vcard__over">
+                            <span class="proj__badge" data-i18n="proj.b3">Видеопродакшн</span>
+                            <h3 class="vcard__h" data-i18n="proj.t3">Динамичный видеоконтент</h3>
+                            <div class="proj__meta"><span data-i18n="proj.v3">200K+ просмотров</span><span data-i18n="proj.d3">10 дней</span></div>
+                        </div>
+                    </article>
+                </div>
+                                <div class="grid-asym">
+                    <!-- Left: Vertical Edit -->
+                    <article class="vcard tilt-card grid-asym-left" data-a>
+                        <div class="vcard__vid">
+                            <div class="vid-overlay"></div>
+                            <video autoplay loop muted playsinline preload="metadata">
+                                <source src="videos/FINAL_USA.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="vcard__over">
+                            <span class="proj__badge">Dark Cinematic</span>
+                            <h3 class="vcard__h">My Obsession</h3>
+                        </div>
+                    </article>
+
+                    <!-- Right: Two Stacked Squares -->
+                    <div class="grid-asym-right">
+                        <article class="sqcard tilt-card" data-a>
+                            <div class="sqcard__vid">
+                                <div class="vid-overlay"></div>
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="videos/ai prod товары.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="vcard__over">
+                                <span class="proj__badge" data-i18n="proj.b4">AI-маркетинг</span>
+                                <h3 class="vcard__h" data-i18n="proj.t4">AI-промо для FMCG</h3>
+                            </div>
+                        </article>
+                        <article class="sqcard tilt-card" data-a>
+                            <div class="sqcard__vid">
+                                <div class="vid-overlay"></div>
+                                <video autoplay loop muted playsinline preload="metadata">
+                                    <source src="videos/реклама очков_1.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="vcard__over">
+                                <span class="proj__badge" data-i18n="proj.b5">Fashion & Lifestyle</span>
+                                <h3 class="vcard__h" data-i18n="proj.t5">Имиджевый промо</h3>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case" id="case">
+        <div class="wrap">
+            <div class="section-top" data-a>
+                <p class="section-label" data-i18n="case.label">Кейс: A7DOK</p>
+                <h2 class="section-h" data-a data-i18n="case.h">Результаты за 2&nbsp;недели</h2>
+                <p class="section-p" data-i18n="case.p">Запуск Instagram с нуля для деревообрабатывающего завода.&nbsp;Без рекламного бюджета.</p>
+            </div>
+            <div class="bento">
+                <div class="bento__card bento__card--lg bento__card--ig tilt-card" data-a>
+                    <div class="ig-mock">
+                        <div class="ig-mock__header">
+                            <svg class="ig-mock__logo" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="6" r="1.5" fill="currentColor"/></svg>
+                            <span class="ig-mock__handle">a7dok_official</span>
+                            <span class="ig-mock__badge">Instagram Insights</span>
+                        </div>
+                        <div class="ig-mock__profile">
+                            <div class="ig-mock__avatar ig-mock__avatar--img" style="background-image:url('images/a7dok-logo.png')"></div>
+                            <div class="ig-mock__stats">
+                                <div class="ig-mock__stat"><span class="ig-mock__stat-num">16</span><span class="ig-mock__stat-label" data-i18n="case.posts">публикаций</span></div>
+                                <div class="ig-mock__stat"><span class="ig-mock__stat-num">521</span><span class="ig-mock__stat-label" data-i18n="case.followers">подписчиков</span></div>
+                                <div class="ig-mock__stat"><span class="ig-mock__stat-num">12</span><span class="ig-mock__stat-label" data-i18n="case.following">подписок</span></div>
+                            </div>
+                        </div>
+                        <div class="ig-mock__reels">
+                            <div class="ig-mock__reel">
+                                <div class="ig-mock__reel-thumb" style="background-image:url('images/reel-build.png')"></div>
+                                <div class="ig-mock__reel-info">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                    <span>212K</span>
+                                </div>
+                            </div>
+                            <div class="ig-mock__reel">
+                                <div class="ig-mock__reel-thumb" style="background-image:url('images/reel-arch.png')"></div>
+                                <div class="ig-mock__reel-info">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                    <span>29.2K</span>
+                                </div>
+                            </div>
+                            <div class="ig-mock__reel">
+                                <div class="ig-mock__reel-thumb" style="background-image:url('images/reel-finger.png')"></div>
+                                <div class="ig-mock__reel-info">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                    <span>128K</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento__side">
+                        <span class="bento__num" data-count="212000">212 000+</span>
+                        <p class="bento__text" data-i18n="case.c1">Просмотров на <strong>одном Reels</strong> в ультра-консервативной B2B-нише (экспорт пиломатериалов) за&nbsp;первые 10&nbsp;дней.</p>
+                    </div>
+                </div>
+                <div class="bento__card tilt-card" data-a>
+                    <span class="bento__num" data-count="521">521</span>
+                    <p class="bento__text" data-i18n="case.c2"><strong>Целевых подписчиков</strong> — байеры, застройщики, мебельщики — привлечено на абсолютно новый аккаунт.</p>
+                </div>
+                <div class="bento__card tilt-card" data-a>
+                    <span class="bento__num bento__num--long" data-count="5000000" data-suffix="+ ₽">5 000 000+ ₽</span>
+                    <p class="bento__text" data-i18n="case.c3"><strong>Новых продаж</strong> сгенерировано за две недели. Вирусный контент напрямую конвертировался в крупные B2B-сделки.</p>
+                </div>
+                <div class="bento__card bento__card--wide tilt-card" data-a>
+                    <span class="bento__num" data-count="370000">370 000+</span>
+                    <p class="bento__text" data-i18n="case.c4"><strong>Суммарный органический охват</strong> бренда за 2 недели. Контент заставляет алгоритмы соцсетей работать на&nbsp;бизнес.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case" id="case2">
+        <div class="wrap">
+            <div class="section-top" data-a>
+                <p class="section-label" data-i18n="case2.label">Кейс: GlobalWorkWay</p>
+                <h2 class="section-h" data-a data-i18n="case2.h">Контент, который продаёт услуги</h2>
+                <p class="section-p" data-i18n="case2.p">Ведение Instagram для HR-платформы по&nbsp;трудоустройству водителей в&nbsp;РФ.</p>
+            </div>
+            <div class="bento">
+                <div class="bento__card bento__card--lg bento__card--ig tilt-card" data-a>
+                    <div class="ig-mock">
+                        <div class="ig-mock__header">
+                            <svg class="ig-mock__logo" width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="6" r="1.5" fill="currentColor"/></svg>
+                            <span class="ig-mock__handle">globalworkway</span>
+                            <span class="ig-mock__badge">Instagram Insights</span>
+                        </div>
+                        <div class="ig-mock__profile">
+                            <div class="ig-mock__avatar ig-mock__avatar--img" style="background-image:url('images/gww-logo.png')"></div>
+                            <div class="ig-mock__stats">
+                                <div class="ig-mock__stat"><span class="ig-mock__stat-num">23</span><span class="ig-mock__stat-label" data-i18n="case2.posts">публикаций</span></div>
+                                <div class="ig-mock__stat"><span class="ig-mock__stat-num">1 269</span><span class="ig-mock__stat-label" data-i18n="case2.followers">подписчиков</span></div>
+                                <div class="ig-mock__stat"><span class="ig-mock__stat-num">8</span><span class="ig-mock__stat-label" data-i18n="case2.following">подписок</span></div>
+                            </div>
+                        </div>
+                        <div class="ig-mock__reels">
+                            <div class="ig-mock__reel">
+                                <div class="ig-mock__reel-thumb" style="background-image:url('images/gww-reel1.png')"></div>
+                                <div class="ig-mock__reel-info">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                    <span>82K</span>
+                                </div>
+                            </div>
+                            <div class="ig-mock__reel">
+                                <div class="ig-mock__reel-thumb" style="background-image:url('images/gww-reel2.png')"></div>
+                                <div class="ig-mock__reel-info">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                    <span>56K</span>
+                                </div>
+                            </div>
+                            <div class="ig-mock__reel">
+                                <div class="ig-mock__reel-thumb" style="background-image:url('images/gww-reel3.png')"></div>
+                                <div class="ig-mock__reel-info">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                    <span>43K</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento__side">
+                        <span class="bento__num bento__num--range" data-i18n="case2.range">40–80K</span>
+                        <p class="bento__text" data-i18n="case2.c1">Средние просмотры на&nbsp;Reels. Стабильный охват целевой аудитории — водители, перевозчики, логисты.</p>
+                    </div>
+                </div>
+                <div class="bento__card tilt-card" data-a>
+                    <span class="bento__num" data-count="1269">1 269</span>
+                    <p class="bento__text" data-i18n="case2.c2"><strong>Подписчиков</strong> — целевая аудитория из&nbsp;водителей и&nbsp;соискателей, привлечённая органическим AI-контентом.</p>
+                </div>
+                <div class="bento__card tilt-card" data-a>
+                    <span class="bento__num bento__num--text" data-i18n="case2.dm">DM / WhatsApp</span>
+                    <p class="bento__text" data-i18n="case2.c3">Постоянный поток входящих сообщений. Каждый ролик генерирует заявки в&nbsp;директ и&nbsp;<strong>WhatsApp</strong>.</p>
+                </div>
+                <div class="bento__card bento__card--wide tilt-card" data-a>
+                    <span class="bento__num bento__num--text" data-i18n="case2.sales">Покупка услуг</span>
+                    <p class="bento__text" data-i18n="case2.c4">Контент конвертируется в&nbsp;<strong>реальные продажи</strong>. Соискатели оплачивают услуги по&nbsp;оформлению документов и&nbsp;трудоустройству напрямую через профиль.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="wrap">
+            <div class="section-top" data-a>
+                <p class="section-label" data-i18n="feat.label">Возможности</p>
+                <h2 class="section-h" data-a data-i18n="feat.h">Полный цикл продакшна</h2>
+                <p class="section-p" data-i18n="feat.p">От идеи до готового контента — всё в одних руках.</p>
+            </div>
+            <div class="feat-grid">
+                <div class="feat feat--hero tilt-card" data-a>
+                    <div class="feat__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+                    <h3 class="feat__h" data-i18n="feat.t1">Креатив и ИИ</h3>
+                    <p class="feat__p" data-i18n="feat.d1">Генерация уникального визуала, photo-реалистичных моделей и сценариев без бюджетов на масштабные съёмки. Midjourney, Kling AI, Gen-3 Alpha.</p>
+                    <div class="feat__tags"><span>Midjourney</span><span>Kling AI</span><span>Gen-3</span><span>Runway</span></div>
+                </div>
+                <div class="feat tilt-card" data-a>
+                    <div class="feat__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+                    <h3 class="feat__h" data-i18n="feat.t2">VFX и Монтаж</h3>
+                    <p class="feat__p" data-i18n="feat.d2">After Effects, трекинг камеры, интеграция CG-элементов. Динамичный монтаж топ-уровня.</p>
+                    <div class="feat__tags"><span>After Effects</span><span>DaVinci</span><span>Mocha</span></div>
+                </div>
+                <div class="feat tilt-card" data-a>
+                    <div class="feat__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                    <h3 class="feat__h" data-i18n="feat.t3">Веб и Боты</h3>
+                    <p class="feat__p" data-i18n="feat.d3">Продающие лендинги под проекты, Telegram-боты для автоматизации обработки заявок.</p>
+                    <div class="feat__tags"><span>HTML/CSS/JS</span><span>Bots</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="clients">
+        <div class="wrap">
+            <p class="section-label" data-a data-i18n="clients.label">Клиенты</p>
+            <div class="clients__grid" data-a>
+                <div class="client-card tilt-card">
+                    <div class="client-card__icon">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 24L14 4L22 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <span class="client-card__name">A7DOK</span>
+                    <span class="client-card__desc" data-i18n="clients.a7">Лесопромышленный холдинг</span>
+                </div>
+                <div class="client-card tilt-card">
+                    <div class="client-card__icon">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M14 6v16M6 14h16" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="14" r="3" fill="currentColor" opacity=".3"/></svg>
+                    </div>
+                    <span class="client-card__name">DamodaraAI</span>
+                    <span class="client-card__desc" data-i18n="clients.damo">AI-стартап</span>
+                </div>
+                <div class="client-card tilt-card">
+                    <div class="client-card__icon">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="8" width="20" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 12h20" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="10" r="1" fill="currentColor"/><circle cx="11" cy="10" r="1" fill="currentColor"/></svg>
+                    </div>
+                    <span class="client-card__name">GlobalWorkWay</span>
+                    <span class="client-card__desc" data-i18n="clients.gww">HR-платформа</span>
+                </div>
+                <div class="client-card tilt-card">
+                    <div class="client-card__icon">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4v6M10 7l4 3 4-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="12" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M11 17h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                    <span class="client-card__name">Теплофон</span>
+                    <span class="client-card__desc" data-i18n="clients.teplo">Сколково</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="wrap">
+            <div class="section-top" data-a>
+                <p class="section-label" data-i18n="faq.label">FAQ</p>
+                <h2 class="section-h" data-a data-i18n="faq.h">Частые вопросы</h2>
+                <p class="section-p" data-i18n="faq.p">Снимаем страхи перед AI и делаем процесс прозрачным.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-card tilt-card" data-a>
+                    <div class="faq-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                    </div>
+                    <h3 class="faq-card__q" data-i18n="faq.q1">Нужно ли нам организовывать съемки?</h3>
+                    <p class="faq-card__a" data-i18n="faq.a1">Нет, мы создаем фотореалистичный контент полностью на базе ИИ и графики, экономя вам сотни тысяч рублей на аренде студий и операторах.</p>
+                </div>
+                <div class="faq-card tilt-card" data-a>
+                    <div class="faq-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 class="faq-card__q" data-i18n="faq.q2">Кому принадлежат авторские права?</h3>
+                    <p class="faq-card__a" data-i18n="faq.a2">Полностью вам. Вы получаете чистый эксклюзивный контент для любых коммерческих целей.</p>
+                </div>
+                <div class="faq-card tilt-card" data-a>
+                    <div class="faq-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3 class="faq-card__q" data-i18n="faq.q3">Каковы сроки?</h3>
+                    <p class="faq-card__a" data-i18n="faq.a3">От 3 до 7 дней на один готовый ролик под ключ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="wrap">
+            <div class="contact__body" data-a>
+                <h2 class="contact__label" data-a="word" data-i18n="contact.label">Контакты</h2>
+                <p class="contact__sub" data-i18n="contact.sub">Нужен проект, есть предложение или вы хотите<br>просто поздороваться — пишите</p>
+                <a href="https://t.me/fatalTriumph" target="_blank" class="contact__big">@fatalTriumph</a>
+                <div class="contact__pills">
+                    <a href="https://t.me/fatalTriumph" target="_blank" class="cpill">TELEGRAM</a>
+                    <a href="mailto:example@triumphprod.com" class="cpill">EMAIL</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div><!-- .site-wrapper -->
+<footer class="foot">
+    <div class="wrap">
+        <div class="foot__row">
+            <div class="foot__left">
+                <a href="#" class="nav__logo nav__logo--sm" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                    <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 20H85V35H57V85H43V35H15V20Z" fill="#FFFFFF"/>
+                    </svg>
+                    <div style="display: flex; flex-direction: column; justify-content: center; line-height: 1;">
+                        <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.15em; color: #FFFFFF; text-transform: uppercase;">Triumph</span>
+                        <span style="font-size: 7px; font-weight: 400; letter-spacing: 0.38em; color: #888888; text-transform: uppercase; margin-top: 2px;">Production</span>
+                    </div>
+                </a>
+                <span class="foot__copy">© 2025 Triumph Production</span>
+            </div>
+            <div class="foot__right">
+                <a href="https://t.me/fatalTriumph" target="_blank">Telegram</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script-v17.js"></script>
+</body>
+</html>
