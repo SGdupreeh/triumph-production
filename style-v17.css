@@ -630,21 +630,5 @@ html, body {
         font-size: 8px;
         padding: 4px 6px;
     }
-   /* Намертво привязываем видео к границам квадратной карточки */
-.grid-asym-right .sqcard {
-    position: relative !important;
-    overflow: hidden !important;
-}
-
-.grid-asym-right .sqcard video {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    min-width: 100% !important;
-    min-height: 100% !important;
-    width: auto !important;
-    height: auto !important;
-    object-fit: cover !important;
-}
+  
 }
