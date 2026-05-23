@@ -528,14 +528,27 @@ animation:grain-shift .08s steps(1) infinite}
     pointer-events: none;
     z-index: 2;
 }
+/* 1. Переносим маску на обертку (Фикс бага Safari с обрезкой 1/2 видео) */
+.vcard__vid, .sqcard__vid {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    z-index: 0;
+}
+
+/* 2. Заставляем видео заполнять контейнер чисто и без конфликтов */
 .vcard__vid video, .sqcard__vid video {
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
 /* ── 3D Tilt ── */
